@@ -1,0 +1,21 @@
+.wrap{width:94%; height:100%; padding:0 3%;}
+.edit_info{width:100%; margin-top:1rem;}
+.edit_info label{display:inline-block; width:100%; line-height:2.5rem; font-size:1.4rem;}
+.edit_info input{width:100%; height:3rem; margin-bottom:0.5rem; line-height:3rem; border:1px solid #ccc; border-radius:0.5rem; font-size:1.4rem; text-indent:1rem;}
+.edit_info button{width:5rem; height:3rem; font-size:1.4rem; color:#fff; margin-top:0.5rem; border-radius:0.5rem;}
+.edit_info button.add{margin-right:1rem; background:#428BCA;}
+.edit_info button.reset{background:#D9534F;}
+
+.user_info{margin-top:3rem; background:#fff; border:1px solid #ccc;}
+.user_info ul{height:3.5rem; line-height:3.5rem; text-align:center; font-size:1.3rem;}
+.user_info ul:not(:last-child){border-bottom:1px solid #ccc;}
+.user_info ul li{flex:1; -webkit-flex:1;}
+.user_info ul li:not(:last-child){border-right:1px solid #ccc;}
+.user_info ul button{padding:0.6rem 1rem; border-radius:0.3rem; color:#fff;}
+.user_info ul.table_tit{font-size:1.6rem; font-weight:bold;}
+.user_info ul.table_content button{background:#428BCA;}
+.user_info ul.table_footer{display:flex; display:-webkit-flex;
+    justify-content:flex-end; -webkit-justify-content:flex-end;
+    align-items:center; -webkit-align-items:center;}
+.user_info ul.table_footer button{margin-right:1rem; background:#D9534F;}
+

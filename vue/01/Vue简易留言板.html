@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+    <title>Vue简易留言板</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/messageBoard.css">
+    <script>
+        document.documentElement.style.fontSize = (window.innerWidth/37.5)*1.2 + 'px';
+    </script>
+    <script src="../js/layer.js"></script>
+    <script src="../js/mylayer.js"></script>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="messageBoard" class="wrap">
+    <form class="edit_info">
+        <label for="">用户名</label>
+        <input type="text" placeholder="请输入用户名" v-model="username">
+        <label for="">年龄</label>
+        <input type="number" placeholder="请输入年龄" v-model="age">
+        <button type="button" class="add" @click="add()">添加</button>
+        <button type="reset" class="reset">重置</button>
+    </form>
+    <!-- 用户信息表 -->
+    <div class="user_info">
+        <ul class="table_tit">用户信息表</ul>
+        <ul class="flex table_header">
+            <li>序号</li>
+            <li>名字</li>
+            <li>年龄</li>
+            <li>操作</li>
+        </ul>
+        <ul class="flex table_content" v-for="item in tableList">
+            <li>{{$index + 1}}</li>
+            <li>{{item.name}}</li>
+            <li>{{item.age}}</li>
+            <li>
+                <button @click="PopAlert($index)">删除</button>
+            </li>
+        </ul>
+        <ul class="table_empty" v-show="tableList.length==0">暂无数据...</ul>
+        <ul class="table_footer" v-show="tableList.length!=0">
+            <button @click="PopAlert(-1)">删除全部</button>
+        </ul>
+    </div>
+</div>
+<script>
+window.onload = function(){
+    var MessageBoard = new Vue({
+        el:'#messageBoard',
+        data:{
+            tableList:[],
+            username:'',
+            age:''
+        },
+        methods:{
+            add:function(){
+                this.tableList.push({
+                    name:this.username,
+                    age:this.age
+                });
+                this.username = '';
+                this.age = '';
+            },
+            PopAlert:function(n){
+                console.log(n);
+                var that = this;
+                if(n == '-1'){
+                    var v = {title:'您确认要删除全部么？',onyes:function(index){
+                        that.tableList = [];
+                        layer.close(index);
+                        console.log(that.tableList);
+                    }};
+                }else{
+                    var v = {title:'您确认要删除么？',onyes:function(index){
+                        that.tableList.splice(n,1);
+                        layer.close(index);
+                    }}; 
+                }
+                PopConfirm(v);
+            }
+        }
+    })
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js组件化开发</title>
+</head>
+<body>
+    <div id="app">
+        <counter heading="likes" color="green"></counter>
+        <counter heading="Dislikes" color="red"></counter>
+    </div>
+    <template id="counter-template">
+        <h1>{{heading}}</h1>
+        <button @click="count += 1" style="background:{{color}}">submit {{ count }}</button>
+    </template>
+    <!-- <script type="text/javascript" src="js/vue.js"></script> -->
+    <script type="text/javascript" src="http://cdn.bootcss.com/vue/1.0.14/vue.js"></script>
+    <script>
+        Vue.component('counter', {
+            template:'#counter-template',
+            props:['heading', 'color'],
+            data: function(){
+                return { count:0};
+            }
+        })
+        new Vue({
+            el: '#app',
+        })
+    </script>
+</body>
+</html>
+<!-- v-on:click===可以简写为@click  keyDown、keyUp事件同样如此 -->

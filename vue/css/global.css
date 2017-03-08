@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{height:100%;}
+body{width:100%; background:#F5F5F5;}
+html{font-size:calc(100vw/37.5); font-family:"Microsoft YaHei",Arial,sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
+html,body,div,header,footer,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,
+form,fieldset,legend,img,audio,canvas,figure,nav,section,video
+{-font-size:10px; color:#3D3F46; margin:0; padding:0; font-family:"Microsoft YaHei",Arial,sans-serif; -webkit-user-select:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); appearance:none; -webkit-appearance: none;}
+img{display:block; border:0;}
+ul,ol,li{list-style:none;}
+i,em{font-style:normal;}
+a{text-decoration:none; border:none; outline:none; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color:transparent;}
+table{border-spacing:0; border-collapse:collapse;}
+input,button,select,textarea{outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0); appearance:none; -webkit-appearance: none;}
+input,button,textarea,select{border:none; resize:none;}
+select{background:#fff;}
+.show{display:block;}
+.hide{display:none;}
+
+/*placeholder的颜色控制*/
+/* input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #666; font-size: 15px;}
+#name::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #666; font-size: 15px;} */
+
+/*弹性盒*/
+.wrap,.ascension,.flexBox,.brankRow,.scoreModule,.nav,.brandBox{display:box; display:-webkit-box; display:-moz-box; display:-ms-box; display:-o-box;}
+.ascension li,.content,.brankRowP,.scoreModule li,.nav li{box-flex:1; -webkit-box-flex:1; -moz-box-flex:1; -ms-box-flex:1; -o-box-flex:1;}
+.wrap,.brandBox{box-orient:vertical; -webkit-box-orient:vertical; -moz-box-orient:vertical; -ms-box-orient:vertical;-o-box-orient:vertical;}
+.ascension,.flexBox,.brankRow,.scoreModule,.nav{-webkit-box-orient:horizontal; -moz-box-orient:horizontal; -o-box-orient:horizontal; -ms-box-orient:horizontal; box-orient:horizontal;}
+
+
+/*微信端页面滚动流畅度兼容问题*/
+.wrap,.join_wrap,#cityBox,.content,#brankCodeBox{width:100%; height:100%; overflow:auto; -webkit-overflow-scrolling:touch;}
+
+/*隔行变色*/
+.fixedfilm_name p:nth-child(odd){background:#D1DAE0;}
+.fixedfilm_name p:nth-child(even){background:#fff;}
+
+/*显示省略号*/
+.list-name1,.list-name{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+/*弹性盒*/
+.flex{display:flex; display:-webkit-flex;
+    /* flex-direction:row; -webkit-flex-direction:row; */
+    justify-content:center; -webkit-justify-content:center;
+    align-items:center; -webkit-align-items:center;}
+
+/*****媒体查询部分******/
+/* @media screen and (min-width:320px) and (max-width:359px){
+  html,body{ font-size:10px; }
+}
+
+@media screen and (min-width:360px) and (max-width:413px) {
+  html,body{ font-size:12px; }
+}
+
+@media screen and (min-width:414px) and (max-width:479px){
+  html,body{ font-size:13px; }
+}
+
+@media screen and (min-width:480px) and (max-width:519px){
+  html,body{ font-size:16px; }
+}
+
+@media screen and (min-width:600px) and (max-width:679px) {
+  html,body{ font-size:18px; }
+}
+
+@media screen and (min-width:680px) and (max-width:719px) {
+  html,body{ font-size:20px; }
+}
+
+@media screen and (min-width:720px) and (max-width:767px){
+  html,body{ font-size:22px; }
+}
+
+@media screen and (min-width:768px){
+  html,body{ font-size:24px; }
+}  */
